@@ -1,0 +1,52 @@
+---
+title: "Request Lifecycle no Laravel"
+date: "2025-06-01"
+description: "Esse é um post de teste com MDX no Next.js"
+image_url: "meu-primeiro-post.jpg"
+reading_time: 5
+---
+
+# Request Lifecycle Laravel.
+
+Primeiros passos:
+
+O ponto de entrada no sistema laravel é no arquivo public/index.php,
+
+Imagine que o kernel é uma grande caixa preta, onde você possui uma funcionalidade básica, envia algo e recebe algo em troca (request e response). A funcionalidade interna da caixa não deve ser exposta.
+
+## Service Providers:
+
+São basicamente classes responsáveis por registrar e inicializar funcionalidade do framework (ou de pacotes externos). Praticamente tudo que o laravel faz passa por algum Service Provider, exemplo: roteamento, banco de dados, autenticação, filas, validação, etc.
+
+Por curiosidade minha, esses são os Service Providers instanciados no meu projeto atual
+
+```jsx
+[
+	App\Providers\AppServiceProvider::class,
+	App\Providers\AuthServiceProvider::class,
+	App\Providers\RouteServiceProvider::class,
+	App\Providers\TelescopeServiceProvider::class,
+];
+```
+
+Obs.: Esses são os service providers do meu projeto, além desses, o framework laravel possui a própria lista que fica em `vendor/laravel/framework/…`.
+
+- A cada requisição os services providers são instanciados pelo laravel
+- O método `register()` de cada service provider é chamado para registrar os bindings e configurações do container.
+- Depois chama o `boot()` para executar inicializações que dependem do container já configurado.
+
+## Register x Boot
+
+→ Register: Registra bindings no Service Container
+
+O service container é um mecanismo de injeção de dependências. Ele mantém um “catálogo” do o que é o que na aplicação.
+
+→ Boot: executa a lógica de inicialização que depende de coisas já registradas.
+
+Analogia:
+
+- **register()**: escreve o cardápio. Diz: “Quando o cliente pedir **Pizza Margherita**, entregue **massa + molho + queijo** preparados com tal receita”.
+  → **Nada é cozinhado ainda.**
+- **boot()**: agora a cozinha está aberta, os ingredientes estão disponíveis e o cliente fez o pedido.
+  → O chef **executa as receitas** com base no cardápio que foi registrado.
+  ### Routes

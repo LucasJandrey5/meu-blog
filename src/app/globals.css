@@ -1,5 +1,26 @@
 @import "tailwindcss";
 
+/* Importar tema de syntax highlighting */
+@import "highlight.js/styles/github.css";
+
+/* Estilos customizados para o blog */
+.prose pre {
+  @apply bg-gray-900;
+}
+
+.prose code {
+  @apply text-pink-600;
+}
+
+.prose pre code {
+  @apply text-gray-100;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -10,13 +31,6 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 body {
