@@ -1,34 +1,36 @@
+"use client";
+
 import Link from "next/link";
 
 export default function Header() {
-  return (
-    <header className="w-full py-4 px-6 bg-white shadow-sm">
-      <div className="max-w-7xl mx-auto flex items-center justify-between">
-        {/* Nome na esquerda */}
-        <Link
-          href="/"
-          className="text-2xl font-bold text-gray-800 hover:text-gray-600"
-        >
-          Lucas Jandrey <span className="text-gray-500">👋</span>
-        </Link>
+  const navsItems = [
+    {
+      label: "Home",
+      href: "/",
+    },
+    {
+      label: "Admin",
+      href: "/admin",
+    },
+  ];
 
-        {/* Navegação na direita */}
-        <nav>
-          <ul className="flex items-center space-x-8">
-            <li>
-              <NavLink href="/">Home</NavLink>
-            </li>
-            <li>
-              <NavLink href="/blog">Blog</NavLink>
-            </li>
-            <li>
-              <NavLink href="/sobre">Sobre</NavLink>
-            </li>
-            <li>
-              <NavLink href="/projetos">Projetos</NavLink>
-            </li>
-          </ul>
-        </nav>
+  return (
+    <header className="bg-white shadow-sm">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center py-6">
+          <div>
+            <Link href="/" className="text-2xl font-bold text-gray-900">
+              Lucas Jandrey
+            </Link>
+          </div>
+          <nav className="flex items-center space-x-6">
+            {navsItems.map((item) => (
+              <NavLink key={item.href} href={item.href}>
+                {item.label}
+              </NavLink>
+            ))}
+          </nav>
+        </div>
       </div>
     </header>
   );

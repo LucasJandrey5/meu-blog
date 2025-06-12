@@ -1,36 +1,70 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 📝 Blog do Lucas Jandrey
 
-## Getting Started
+## Sobre o Projeto
 
-First, run the development server:
+Este blog pessoal é o lugar onde compartilho meus materiais de estudo, anotações e descobertas do mundo da programação e tecnologia.
+
+**Meu objetivo** é simples: ao ensinar e compartilhar conhecimento, eu também aprendo. Acredito que explicar conceitos para outros é uma das melhores formas de consolidar o próprio aprendizado.
+
+Aqui você encontrará:
+
+- 📚 Artigos sobre desenvolvimento web
+- 💻 Tutoriais e dicas de programação
+- 🚀 Experiências com novas tecnologias
+- 🧠 Conceitos fundamentais da computação
+
+**Visite meu site principal:** [www.lucasjandrey.com.br](https://www.lucasjandrey.com.br)
+
+## 🛠️ Tecnologias
+
+- **Next.js 15** - Framework React para produção
+- **TypeScript** - Tipagem estática para JavaScript
+- **MDX** - Markdown com suporte a componentes React
+- **Tailwind CSS** - Framework CSS utilitário
+- **Syntax Highlighting** - Para blocos de código
+
+## 🚀 Como Executar
 
 ```bash
+# Instalar dependências
+npm install
+
+# Executar em modo de desenvolvimento
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Compilar para produção
+npm run build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Acesse [http://localhost:3000](http://localhost:3000) para ver o resultado.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📁 Estrutura do Projeto
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+src/
+├── app/ # App Router do Next.js
+├── components/ # Componentes React
+├── lib/ # Utilitários e configurações
+├── pages/ # Pages Router (posts)
+├── posts/ # Arquivos MDX dos posts
+└── types/ # Definições de tipos TypeScript
 
-## Learn More
+## ✍️ Criando um Post
 
-To learn more about Next.js, take a look at the following resources:
+Crie um arquivo `.mdx` na pasta `src/posts/` com o frontmatter:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```mdx
+---
+title: "Título do Post"
+date: "2024-01-15"
+description: "Descrição breve"
+image_url: "imagem.jpg"
+reading_time: 5
+tags: ["React", "JavaScript"]
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# Conteúdo do post aqui...
+```
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+💡 **Dica:** Se você encontrar algum erro ou tiver sugestões, fique à vontade para abrir uma issue!
